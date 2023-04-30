@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'HelveticaNowDisplay-Bold';
+    src: url("../assets/fonts/HelveticaNowDisplay-Bold.ttf");
+}
+
+@font-face {
+    font-family: 'HelveticaNowDisplay-ExtLtIta';
+    src: url("../assets/fonts/HelveticaNowDisplay-ExtLtIta.ttf");
+}
+
+@font-face {
+    font-family: 'HelveticaNowDisplay-Medium';
+    src: url("../assets/fonts/HelveticaNowDisplay-Medium.ttf");
+}
+
+@font-face {
+    font-family: 'HelveticaNowDisplay-RegIta';
+    src: url("../assets/fonts/HelveticaNowDisplay-RegIta.ttf");
+}
+
+@font-face {
+    font-family: 'HelveticaNowDisplay-Regular';
+    src: url("../assets/fonts/HelveticaNowDisplay-Regular.ttf");
+}
+
+
+$max-width: 1170px;
+$gutter: 45px;
+$gutter1: 30px;
+$gutter2: 38px;
+//$border-radius: 3px;
+//$finger-size: 44px;
+
+$bold-font: 'HelveticaNowDisplay-Bold', sans-serif;
+$medium-font: 'HelveticaNowDisplay-Medium', sans-serif;
+$extra-light-italic-font: 'HelveticaNowDisplay-ExtLtIta', sans-serif;
+$regular-font: 'HelveticaNowDisplay-Regular', sans-serif;
+$regular-italic-font: 'HelveticaNowDisplay-RegIta', sans-serif;
+
+$font-xxs: 12px;
+$font-xs: 14px;
+$font-s: 16px;
+$font-m: 18px;
+$font-l: 40px;
+$font-xl: 55px;
+$font-xxl: 68px;
+
+
+// Renkler 
+$primary-color: #10cab7;
+
+$secondary-color: #2c4755;
+
+
+$orange-color: #F9531D;
+$pink-color: #E09CA4;
+$green-color: #A1B7A3;
+
+$light-color: #ffffff;
+$dark-color: #000000;
+$dark-color-light: #191919;
+$dark-color-light2: #362D2D;
+
+
+
+$border-color: #9D8787;

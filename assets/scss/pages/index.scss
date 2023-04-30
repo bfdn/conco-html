@@ -1,0 +1,448 @@
+.destinations {
+    margin-top: pxtorem(30px);
+
+    @include mq('tablet') {
+        margin-top: -160px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(pxtorem(256px), max-content));
+        grid-gap: $gutter2;
+        justify-content: center;
+    }
+
+    &__item {
+        position: relative;
+
+        figure {
+            img {
+                @include fitImg;
+            }
+        }
+    }
+
+    &__price {
+        position: absolute;
+        top: 10%;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.85);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 2px;
+        padding-left: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        font-size: pxtorem($font-xxs);
+        font-family: $medium-font;
+        font-weight: 600;
+    }
+
+    &__city {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .25);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        color: $light-color;
+        font-family: $medium-font;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        span {
+            margin-left: 8px;
+        }
+    }
+}
+
+.info {
+    margin-top: pxtorem(50px);
+
+    @include mq('tablet') {
+        margin-top: pxtorem(100px);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: pxtorem($gutter1);
+        justify-content: space-between;
+        align-items: center;
+
+        @include mq('tablet') {
+            flex-direction: row;
+        }
+    }
+
+    p {
+        font-family: $regular-italic-font;
+        font-style: italic;
+        color: $dark-color-light2;
+        //flex-basis: 100%;
+    }
+
+    h3 {
+        font-family: $extra-light-italic-font;
+        font-size: $font-xl;
+        font-style: italic;
+        font-weight: 100;
+        color: $dark-color-light;
+
+        @include mq('tablet') {
+            margin-left: pxtorem(150px);
+        }
+    }
+}
+
+.hero {
+    margin-top: pxtorem(50px);
+
+    @include mq('tablet') {
+        margin-top: pxtorem(130px);
+    }
+
+    .container {
+        display: grid;
+        grid-template-areas:
+            "hero"
+            "hero-right1"
+            "hero-right2"
+            "hero-right3";
+        grid-gap: pxtorem(60px);
+
+        @include mq('tablet') {
+            grid-template-areas:
+                "hero hero-right1"
+                "hero hero-right2"
+                "hero hero-right3";
+            align-items: center;
+        }
+    }
+
+    figure {
+        grid-area: hero;
+
+        img {
+            border-radius: 6px 170px 6px 6px;
+            @include fitImg;
+        }
+    }
+
+    &__item {
+        //grid-area: "hero-right";
+
+        &-text {
+            font-family: $extra-light-italic-font;
+            font-style: italic;
+            font-size: pxtorem(20px);
+            font-weight: lighter;
+            color: $dark-color-light2;
+            margin-top: pxtorem(15px);
+
+            @include mq('desktop') {
+                //width: 73%;
+            }
+        }
+
+        &-number {
+            color: $dark-color-light;
+            font-size: pxtorem(50px);
+            font-family: $bold-font;
+            font-weight: 600;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 72px;
+                height: 69px;
+                position: absolute;
+                top: 5%;
+            }
+        }
+
+        &:nth-of-type(1) {
+            grid-area: hero-right1;
+        }
+
+        &:nth-of-type(2) {
+            grid-area: hero-right2;
+        }
+
+        &:nth-of-type(3) {
+            grid-area: hero-right3;
+        }
+
+        &:nth-of-type(1) &-number::after {
+            background: url("../img/pink-icon.png") no-repeat;
+        }
+
+        &:nth-of-type(2) &-number::after {
+            background: url("../img/orange-icon.png") no-repeat;
+        }
+
+        &:nth-of-type(3) &-number::after {
+            background: url("../img/green-icon.png") no-repeat;
+        }
+    }
+}
+
+.partners {
+    margin-top: pxtorem(75px);
+
+    @include mq('tablet') {
+        margin-top: pxtorem(140px);
+    }
+
+    .container {}
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(pxtorem(120px), max-content));
+        justify-content: center;
+        grid-row-gap: pxtorem(30px);
+        grid-column-gap: pxtorem(100px);
+        align-items: center;
+        background-color: rgba(249, 83, 29, .05);
+        padding-top: pxtorem(50px);
+        padding-bottom: pxtorem(50px);
+
+        @include mq('tablet') {
+            border-radius: 100px;
+        }
+
+        img {}
+    }
+}
+
+.documentations {
+    margin-top: pxtorem(60px);
+
+    @include mq('tablet') {
+        margin-top: pxtorem(120px);
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 100%;
+
+        @include mq('tablet') {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            grid-gap: pxtorem(70px);
+        }
+    }
+
+    &__title {
+        font-family: $extra-light-italic-font;
+        font-style: italic;
+        font-size: pxtorem($font-xl);
+        color: $dark-color-light;
+        word-wrap: break-word;
+
+        @include mq('tablet') {
+            font-size: pxtorem($font-xl);
+        }
+    }
+
+    &__text {
+        font-family: $extra-light-italic-font;
+        font-style: italic;
+        color: $dark-color-light2;
+    }
+
+    &__video {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mq('tablet') {
+            grid-column: 1/-1;
+        }
+
+        img {
+            @include fitImg;
+        }
+
+        a {
+            display: flex;
+            background-color: rgba(205, 205, 205, .5);
+            width: pxtorem(60px);
+            height: pxtorem(60px);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+
+            @include mq('tablet') {
+                width: pxtorem(120px);
+                height: pxtorem(120px);
+            }
+
+            i {
+                font-size: 2rem;
+
+                @include mq('tablet') {
+                    font-size: 5rem;
+                }
+            }
+        }
+    }
+
+}
+
+.testimonials {
+    margin-top: pxtorem(75px);
+
+    @include mq('tablet') {
+        margin-top: pxtorem(150px);
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: pxtorem(15px);
+        justify-items: center;
+
+
+        @include mq('tablet') {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__title {
+        text-align: center;
+        font-size: pxtorem($font-xl);
+        font-family: $extra-light-italic-font;
+        margin-bottom: pxtorem(50px);
+        grid-row: 1/2;
+        grid-column: 1/-1;
+
+        @include mq('tablet') {
+            width: 44%;
+        }
+
+    }
+
+    &__item {
+        background-color: #FFF8F6;
+        padding: pxtorem(50px) pxtorem(30px);
+        display: grid;
+        grid-template-columns: 52px 1fr;
+        grid-gap: pxtorem(16px);
+
+        &-img {
+            img {
+                @include fitImg;
+            }
+        }
+
+        &-name {
+            font-family: $medium-font;
+            font-size: pxtorem($font-m);
+            line-height: pxtorem(28px);
+            font-weight: bold;
+            color: #515C6B;
+
+            p {
+                font-size: pxtorem($font-xs);
+                font-family: $regular-font;
+            }
+        }
+
+        &-text {
+            font-family: $regular-font;
+            letter-spacing: 0.1;
+            line-height: 24px;
+            grid-column: 1/3;
+            grid-row: 2/3;
+        }
+
+    }
+
+}
+
+
+.newsletter {
+    background-color: rgba(161, 181, 161, .5);
+    margin-top: pxtorem(75px);
+    padding-top: 93px;
+    padding-bottom: 93px;
+
+    @include mq('tablet') {
+        margin-top: pxtorem(150px);
+    }
+
+    .container {
+        //text-align: center;
+
+        @include mq('tablet') {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+    }
+
+    &__title {
+        font-family: $regular-font;
+        font-size: pxtorem($font-xl);
+        color: $dark-color-light;
+
+        @include mq('tablet') {}
+    }
+
+    form {
+        display: grid;
+        align-items: center;
+        grid-gap: pxtorem(16px);
+        margin-top: pxtorem(42px);
+
+        @include mq('tablet') {
+            grid-template-columns: repeat(3, max-content);
+            padding-left: pxtorem(110px);
+            padding-right: pxtorem(110px);
+
+        }
+
+        input[type="text"] {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            height: pxtorem(53px);
+            border: none;
+            outline: none;
+            padding-left: 20px;
+            font-family: $regular-italic-font;
+            font-size: pxtorem($font-xs);
+            color: #818181;
+
+            @include mq('tablet') {
+                max-width: pxtorem(276px);
+                width: 276px;
+            }
+        }
+
+        button {
+            border-top-right-radius: pxtorem(5px);
+            border-bottom-right-radius: pxtorem(5px);
+            padding: pxtorem(18px) pxtorem(20px);
+            background-color: $orange-color;
+            font-family: $medium-font;
+            font-size: $font-xs;
+            color: $light-color;
+            text-transform: uppercase;
+
+            @include mq('tablet') {
+                max-width: pxtorem(116px);
+            }
+        }
+    }
+}

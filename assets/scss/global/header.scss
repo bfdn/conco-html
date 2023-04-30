@@ -1,0 +1,219 @@
+.header {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 0.2) 0%, rgba(255, 123, 56, 0.4) 35%, rgba(235, 81, 30, 0.30) 100%);
+    height: auto;
+
+    @include mq('tablet') {
+        height: pxtorem(1050px);
+    }
+
+    .container {
+        padding-top: pxtorem(10px);
+
+    }
+
+    .fa-bars {
+        display: block;
+
+        @include mq('tablet') {
+            display: none;
+        }
+    }
+
+    &__bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mq('tablet') {
+            height: pxtorem(120px);
+            border-bottom: 1px solid $border-color;
+        }
+    }
+
+    &__logo {
+        img {
+            @include fitImg;
+        }
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 7%;
+        background-color: $light-color;
+        width: 96%;
+
+        @include mq('tablet') {
+            width: auto;
+            display: flex;
+            position: relative;
+            background-color: transparent;
+            flex-direction: row;
+            top: 0;
+            gap: pxtorem($gutter);
+        }
+
+        &--show {
+            display: flex;
+        }
+
+        &__item {
+            padding-top: pxtorem(5px);
+            padding-bottom: pxtorem(5px);
+            font-family: $medium-font;
+            color: $dark-color;
+            text-transform: uppercase;
+            //font-weight: bold;
+            padding-left: 10px;
+
+            &:has(+ .navbar__item) {
+                border-bottom: 1px solid $border-color;
+
+                @include mq('tablet') {
+                    border: none;
+                }
+            }
+
+            &:hover {
+                color: $orange-color;
+            }
+        }
+    }
+
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-top: pxtorem(52px);
+        gap: pxtorem($gutter);
+        align-items: center;
+
+        @include mq('tablet') {
+            flex-direction: row;
+            gap: pxtorem(100px);
+        }
+
+        &-left {
+            flex: 2;
+
+            @include mq('tablet') {
+                flex: 1;
+            }
+
+            h4 {
+                font-size: pxtorem($font-xxl);
+                font-family: $bold-font;
+
+                img {
+                    max-width: 84px;
+                }
+
+                span {
+                    color: $orange-color;
+                }
+            }
+
+            p {
+                font-family: $regular-italic-font;
+                font-style: italic;
+                margin-top: pxtorem(10px);
+            }
+
+            .btn {
+                max-width: pxtorem(192px);
+                @include radius(26px);
+                margin-top: pxtorem(40px);
+            }
+        }
+
+        .numbers {
+            margin-top: pxtorem(58px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+
+
+            @include mq('tablet') {
+                margin-top: pxtorem(20px);
+                flex-direction: row;
+                gap: pxtorem(30px);
+            }
+
+            .numbers__item {
+                position: relative;
+
+                span {
+                    font-family: $regular-italic-font;
+                    font-size: pxtorem($font-l);
+                }
+
+                &-text {
+                    font-size: pxtorem($font-m);
+                    font-family: $extra-light-italic-font;
+                }
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 46px;
+                    height: 50px;
+                    position: absolute;
+                    top: -10%;
+                    left: -15%;
+                }
+
+                &:nth-of-type(1) {
+                    flex: 1;
+
+                    &::before {
+                        background: url("../img/header-icon1.png") no-repeat;
+                    }
+
+                    span {
+
+                        @include mq('tablet') {}
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    flex: 1;
+
+                    &::before {
+                        background: url("../img/header-icon2.png") no-repeat;
+                    }
+
+                    span {
+                        left: 25%;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    flex: 1;
+
+                    &::before {
+                        background: url("../img/header-icon3.png") no-repeat;
+                    }
+
+                    span {
+                        left: 20%;
+                    }
+                }
+            }
+        }
+
+        &-right {
+            flex: 1;
+
+            &-img {
+                img {
+                    @include fitImg;
+                }
+            }
+        }
+    }
+
+}
